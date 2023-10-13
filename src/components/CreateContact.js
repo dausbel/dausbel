@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import ImageInput from "./ImageInput"
 import serializeForm from "form-serialize"
 
-const CreateContact = (onCreateContact) => {
+const CreateContact = ({onCreateContact}) => {
     const handleSubmit = (e) =>{
         e.preventDefault();
         const values = serializeForm(e.target, { hash: true});
@@ -17,7 +17,8 @@ const CreateContact = (onCreateContact) => {
             Close
             </Link>
             <form onSubmit={handleSubmit} className="create-contact-form">
-            <ImageInput  className="create-contact-avatar-input"
+            <ImageInput  
+            className="create-contact-avatar-input"
             name="avatarUrl"
             maxHeight={64}
             />
